@@ -15,7 +15,7 @@
  @Returns - randomized array
 */
 
-if(typeof(Array.prototype.shuffle) !== 'function') {
+if(typeof(Array.prototype.shuffle) === 'undefined') {
 	Array.prototype.shuffle = function() {
 		var s = [], t = this;
 		while (t.length) s.push(t.splice(Math.random() * t.length, 1)[0]);
@@ -31,7 +31,7 @@ if(typeof(Array.prototype.shuffle) !== 'function') {
  @Returns - boolean
 */
 
-if(typeof(Array.prototype.contains) !== 'function') {
+if(typeof(Array.prototype.contains) === 'undefined') {
 	Array.prototype.contains = function(w) {
 		for(i in this) {		
 			if(this.hasOwnProperty( i ) && typeof( this[i] ) !== 'function') {

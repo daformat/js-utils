@@ -19,7 +19,7 @@
 			* trimmed: raw characters excluding spaces ( " Baba  ".splitLetters().raw == ["B", "a", "b", "a"] )
 */
 
-if(typeof(String.prototype.splitLetters) !== 'function') {
+if(typeof(String.prototype.splitLetters) === 'undefined' {
 	String.prototype.splitLetters = function () {
 	  var str = this, letters = [], trimmed = [], raw = [], index = 0, l, rl, u = "";
 
@@ -50,7 +50,7 @@ if(typeof(String.prototype.splitLetters) !== 'function') {
  @Depends - uses String.transliterate
 */
 
-if(typeof(String.prototype.slugify) !== 'function') {
+if(typeof(String.prototype.slugify) === 'undefined') {
 	String.prototype.slugify = function(){
 		var str = this;  
 		str = str.transliterate();
@@ -61,14 +61,15 @@ if(typeof(String.prototype.slugify) !== 'function') {
 		return str;
 	}
 }
+
 /*
  String.transliterate 
- -------------------
+ --------------------
  @Desc - Replace any known special character with it's ASCII equivalent 
  @Returns - a string
 */
 
-if(typeof(String.prototype.transliterate) !== 'function') {
+if(typeof(String.prototype.transliterate) === 'undefined') {
 	String.prototype.transliterate = function() {
 		var from = "ÂâÀàÂâÄäÉéÈèÊêËëÏïÎîÙÛûùÖöÔôŸÿ",  
 			to   = "AaAaAaAaEeEeEeEeIiIiUuUuOoOoYy",
@@ -93,3 +94,14 @@ if(typeof(String.prototype.transliterate) !== 'function') {
 	}
 }
 
+/*
+ String.trim
+ -----------
+ @Desc - trim any leading and trailing whitespaces 
+ @Returns - a string
+*/
+if (typeof(String.prototype.trim) === 'undefined') {
+  String.prototype.trim = function() {
+    return String(this).replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+  }
+}
