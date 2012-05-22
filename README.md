@@ -17,4 +17,5 @@ None (Public domain)
 * added String.splitLetters method
 * added String.transliterate method
 * added String.slugify method
+* added String.trim method
 * Base code.
