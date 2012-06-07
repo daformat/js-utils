@@ -1,6 +1,5 @@
 js-utils
 ========
-
 #### A collection of some useful javascript snippets ####
 
 Feel free to use them anywhere you want, wether it's a commercial project or not.
@@ -9,7 +8,7 @@ Feel free to use them anywhere you want, wether it's a commercial project or not
 None (Public domain)
 
 ### Change Log ###
-
+2012 05 22 - r0 - String.slugify now replaces dots by dashes instead of simply removing them
 2012 05 22 - r0 - initial commit
 
 * added Array.shuffle method

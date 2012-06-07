@@ -54,8 +54,8 @@ if(typeof(String.prototype.slugify) === 'undefined') {
 	String.prototype.slugify = function(){
 		var str = this;  
 		str = str.transliterate();
-		str = str.replace( /^(\s+)/g, '').replace( /(\s+)$/g, '').replace( /[\ ’&]/g, '-' );
-		str = str.replace( /[:.,\'()%$#\?\/]/g, '' ).replace( /(--+)/g, '-').replace( /^(-+)/g, '')
+		str = str.replace( /^(\s+)/g, '').replace( /(\s+)$/g, '').replace( /[\ ’&.]/g, '-' );
+		str = str.replace( /[:,\'()%$#\?\/]/g, '' ).replace( /(--+)/g, '-').replace( /^(-+)/g, '')
 		str = str.replace( /(-+)$/g, '');
 		str = str.toLowerCase();
 		return str;
@@ -100,6 +100,7 @@ if(typeof(String.prototype.transliterate) === 'undefined') {
  @Desc - trim any leading and trailing whitespaces 
  @Returns - a string
 */
+
 if (typeof(String.prototype.trim) === 'undefined') {
   String.prototype.trim = function() {
     return String(this).replace(/^\s\s*/, '').replace(/\s\s*$/, '');
